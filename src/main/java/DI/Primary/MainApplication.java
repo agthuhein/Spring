@@ -9,6 +9,5 @@ public class MainApplication {
 
         GreetingController greetingController = context.getBean(GreetingController.class);
         greetingController.deliverGreeting();
-        //
     }
 }
