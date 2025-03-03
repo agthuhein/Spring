@@ -19,5 +19,6 @@ public class Main {
     @PostConstruct
     public void initialize() {
         System.out.println("Loaded settings. " + settingsLoaderService.getSettings());
+
     }
 }
