@@ -9,8 +9,6 @@ public class GreetingController {
 
     //Field DI
     @Autowired
-    //Write the first letter in small of ClassName
-    @Qualifier("casualGreetingService")         //If you have many greeting service, take this.
     private IGreetingService greetingService;
 
     public void deliverGreeting() {
