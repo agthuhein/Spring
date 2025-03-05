@@ -1,25 +1,22 @@
-package PostConstruct;
+package mvc;
 
 import jakarta.annotation.PostConstruct;
+import mvc.controller.ChatController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Service;
 
 @SpringBootApplication
-public class Main {
-
+public class Main implements CommandLineRunner {
     @Autowired
-    private SettingsLoaderService settingsLoaderService;
+    private ChatController chatController;
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
-
-    @PostConstruct
-    public void initialize() {
-        System.out.println("Loaded settings. " + settingsLoaderService.getSettings());
-
+    @Override
+    public void run(String... args) throws Exception {
+        chatController.startChat();
     }
 }
